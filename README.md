@@ -45,6 +45,8 @@ Table 1.  Relative sizes of data in VCF, BAM, and GFF3 formats compared to Big D
 | Homo_sapiens.GRCh38.89.chr.features.adam  |      29.9 MB |           84% | `Feature` Avro records in Parquet         |
 
 
+### Methods
+
 ```scala
 import org.bdgenomics.adam.rdd.ADAMContext._
 sc.loadGenotypes("G91716.vcf.gz").sort().saveAsParquet("G91716.genotypes.adam")
@@ -53,7 +55,9 @@ sc.loadGenotypes("G97552.vcf.gz").sort().saveAsParquet("G97552.genotypes.adam")
 
 `htsjdk` complained about the format of some missing attributes in GSN79Tumor_normal.vcf
 ```bash
-$ cat GSN79Tumor_normal.vcf | sed -e 's/MAX_ED=.;//g' | sed -e 's/MIN_ED=.//g' > GSN79Tumor_normal.edit.vcf
+$ cat GSN79Tumor_normal.vcf | \
+    sed -e 's/MAX_ED=.;//g' | \
+    sed -e 's/MIN_ED=.//g' > GSN79Tumor_normal.edit.vcf
 ```
 
 ```scala
@@ -124,6 +128,8 @@ Table 2.  Relative sizes of unaligned reads in FASTQ format compared to Big Data
 | OF_112015SJIA_2_1.fq.gz, OF_112015SJIA_2_2.fq.gz  |              |          100% | Paired GZIP FASTQ files                   |
 | OF_112015SJIA_2.unaligned.fragments.adam          |     124.3 GB |               | `Fragment` Avro records in Parquet        |
 
+
+### Methods
 
 ```scala
 import org.bdgenomics.adam.rdd.ADAMContext._
@@ -222,12 +228,12 @@ $ head G91716.variantCountsByGeneFeature.sorted.txt
 
 ## Brought to you by
 
-![Apache Spark](https://spark.apache.org/images/spark-logo-trademark.png) - [Apache Spark](http://spark.apache.org/)
-![Apache Parquet](https://parquet.apache.org/assets/img/parquet_logo.png) - [Apache Parquet](http://parquet.apache.org/)
-![Apache Avro](https://avro.apache.org/images/avro-logo.png) - [Apache Avro](http://avro.apache.org/)
-![AWS EC2](https://d0.awsstatic.com/icons/header-icons/header-icon_ec2.png) - [Amazon EC2](https://aws.amazon.com/ec2/)
-![AWS EMR](https://d0.awsstatic.com/icons/header-icons/header-icon_EMR.png) - [Amazon EMR](https://aws.amazon.com/emr/)
-![AWS S3](https://d0.awsstatic.com/icons/header-icons/header-icon_s3.png) - [Amazon S3](https://aws.amazon.com/s3/)
-![Scala](http://www.scala-lang.org/resources/img/scala-logo-red-footer.png) - [Scala](http://www.scala-lang.org/)
-![Dangerous Man Brewing](http://dangerousmanbrewing.com/_themes/_images/framework/logo-r.png) - [Dangerous Man Brewing](http://dangerousmanbrewing.com/)
-![Fulton Brewing](https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/Fulton_Beer_Logo.png/200px-Fulton_Beer_Logo.png) - [Fulton Brewing](http://www.fultonbeer.com/)
+* ![Apache Spark](https://spark.apache.org/images/spark-logo-trademark.png) - [Apache Spark](http://spark.apache.org/)
+* ![Apache Parquet](https://parquet.apache.org/assets/img/parquet_logo.png) - [Apache Parquet](http://parquet.apache.org/)
+* ![Apache Avro](https://avro.apache.org/images/avro-logo.png) - [Apache Avro](http://avro.apache.org/)
+* ![AWS EC2](https://d0.awsstatic.com/icons/header-icons/header-icon_ec2.png) - [Amazon EC2](https://aws.amazon.com/ec2/)
+* ![AWS EMR](https://d0.awsstatic.com/icons/header-icons/header-icon_EMR.png) - [Amazon EMR](https://aws.amazon.com/emr/)
+* ![AWS S3](https://d0.awsstatic.com/icons/header-icons/header-icon_s3.png) - [Amazon S3](https://aws.amazon.com/s3/)
+* ![Scala](http://www.scala-lang.org/resources/img/scala-logo-red-footer.png) - [Scala](http://www.scala-lang.org/)
+* ![Dangerous Man Brewing](http://dangerousmanbrewing.com/_themes/_images/framework/logo-r.png) - [Dangerous Man Brewing](http://dangerousmanbrewing.com/)
+* ![Fulton Brewing](https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/Fulton_Beer_Logo.png/200px-Fulton_Beer_Logo.png) - [Fulton Brewing](http://www.fultonbeer.com/)
